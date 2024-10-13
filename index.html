@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HeatSuperhit</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+            keyframes: {
+              moveX: {
+                "0%": { transform: "translateX(0)" },
+                "100%": { transform: "translateX(100vw)" },
+              },
+            },
+            animation: {
+              moveX: "moveX 10s linear infinite", // Customize duration and timing function
+            },
+          },
+        },
+      };
+    </script>
+    <style></style>
+  </head>
+  <body>
+    <img
+      src="./images/icons8-car-64.png"
+      class="w-24 h-24 animate-moveX"
+      alt=""
+    />
+
+    <main class="flex flex-col md:flex-row gap-5 w-11/12 mx-auto justify-center mb-3">
+      <div
+        class=" border-2 border-gray-500 rounded-xl p-5 shadow-xl"
+      >
+        <h1 class="font-bold text-2xl text-gray-500">Draw Pile</h1>
+        <hr />
+        <ul id="board" class="grid grid-cols-2 gap-2"></ul>
+      </div>
+      <div
+        class=" border-2 border-gray-500 rounded-xl p-10 shadow-xl"
+      >
+        <h1 class="font-bold text-2xl text-gray-500">Hand</h1>
+        <hr />
+        <ul id="hand"></ul>
+      </div>
+      <div
+        class=" border-2 border-gray-500 rounded-xl p-10 shadow-xl"
+      >
+        <h1 class="font-bold text-2xl text-gray-500">Heat Deck</h1>
+        <hr />
+        <ul id="heat"></ul>
+      </div>
+      <div
+        class=" border-2 border-gray-500 rounded-xl p-10 shadow-xl"
+      >
+        <h1 class="font-bold text-2xl text-gray-500">Discard</h1>
+        <hr />
+        <ul id="discard"></ul>
+
+        <button class="btn btn-accent my-3" id="shuffle">Shuffle</button>
+      </div>
+      <div class="border-gray-500">
+        <div class="border-2 shadow-lg rounded-xl p-4">
+          <button class="btn btn-error" onclick="reset()">Reset</button
+            ><br /><br />
+            <button class="btn btn-warning" onclick="addStress()">
+              Add Stress
+            </button>
+        </div>       
+
+        <div class="my-5 border-2 shadow-lg rounded-xl p-4">
+            <h3 class="text-xl font-bold mb-2 text-gray-500">Probability Index</h3>
+            <hr>
+            <div id="probabilityDiv" class="space-y-2 mt-2">
+
+            </div>
+        </div>
+      </div>
+    </main>
+    <footer
+      class="footer footer-center bg-base-200 text-base-content rounded p-10"
+    >
+      <aside>
+        <p class="font-bold">
+          Copyright © 2024 - All right reserved by Shafiul Anam
+        </p>
+        <p class="flex gap-1 font-bold">
+          <img src="./images/icons8-mail-24.png" alt="" /> tonoy.tech@gmail.com
+        </p>
+      </aside>
+    </footer>
+    <!-- scripts -->
+    <script src="./utilis.js"></script>
+    <script src="./scripts.js"></script>
+  </body>
+</html>
